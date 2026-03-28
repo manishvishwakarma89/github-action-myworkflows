@@ -16,7 +16,7 @@ jobs:
 
         environment:
             name: github-pages
-            
+
             url: ${{ steps.deployment.outputs.page_url }} 
 
         steps:
@@ -24,7 +24,7 @@ jobs:
             # clones or checks out the code where this workflow is written
             # STEP 1
             - name: Checkout Code 
-              uses: actions/checkout@v4 
+              uses: actions/checkout@v4
 
             # setup GitHub Pages
             # STEP 2
