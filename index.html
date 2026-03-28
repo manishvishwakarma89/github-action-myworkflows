@@ -9,25 +9,20 @@
   <style>
     * { margin:0; padding:0; box-sizing:border-box; }
 
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #0f172a, #4c1d95, #0f172a);
-      color:white;
-      overflow-x:hidden;
-    }
+   body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #f8fafc, #eef2ff, #f8fafc);
+  color: #0f172a;
+}
 
     /* Navbar */
-    nav {
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:20px 40px;
-      position:sticky;
-      top:0;
-      backdrop-filter: blur(10px);
-      background: rgba(0,0,0,0.3);
-      z-index:1000;
-    }
+   nav {
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.7);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
 
     nav a {
       margin-left:20px;
@@ -40,13 +35,18 @@
 
     /* Glass UI */
     .glass {
-      backdrop-filter: blur(20px);
-      background: rgba(255,255,255,0.08);
-      border:1px solid rgba(255,255,255,0.2);
-      border-radius:20px;
-      box-shadow:0 8px 32px rgba(0,0,0,0.4);
-    }
+  backdrop-filter: blur(16px);
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+}
 
+.glass:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 50px rgba(99,102,241,0.2);
+}
     section { padding:60px 40px; }
 
     /* Hero */
@@ -127,6 +127,22 @@
       transition:0.3s;
     }
 
+    h1, h2, h3 {
+  color: #0f172a;
+}
+
+p {
+  color: #475569;
+}
+.btn-primary {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: white;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(99,102,241,0.3);
+}
     .badges span:hover {
       background:#7c3aed;
       transform:scale(1.1);
