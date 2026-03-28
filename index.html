@@ -3,176 +3,291 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Manish Kumar | DevOps Portfolio</title>
+  <title>Manish Kumar | DevOps Engineer</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * { margin:0; padding:0; box-sizing:border-box; }
+
     body {
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #0f172a, #4c1d95);
-      color: white;
-      padding: 20px;
+      background: linear-gradient(135deg, #0f172a, #4c1d95, #0f172a);
+      color:white;
+      overflow-x:hidden;
     }
 
+    /* Navbar */
     nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 40px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:20px 40px;
+      position:sticky;
+      top:0;
+      backdrop-filter: blur(10px);
+      background: rgba(0,0,0,0.3);
+      z-index:1000;
     }
 
     nav a {
-      margin-left: 20px;
-      text-decoration: none;
-      color: white;
-      transition: 0.3s;
+      margin-left:20px;
+      text-decoration:none;
+      color:white;
+      transition:0.3s;
     }
 
-    nav a:hover { color: #c084fc; }
+    nav a:hover { color:#c084fc; }
 
+    /* Glass UI */
     .glass {
-      backdrop-filter: blur(15px);
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255,255,255,0.2);
-      border-radius: 20px;
-      padding: 30px;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+      backdrop-filter: blur(20px);
+      background: rgba(255,255,255,0.08);
+      border:1px solid rgba(255,255,255,0.2);
+      border-radius:20px;
+      box-shadow:0 8px 32px rgba(0,0,0,0.4);
     }
 
-    .hero { margin-bottom: 50px; }
+    section { padding:60px 40px; }
 
-    .hero h1 { font-size: 40px; margin-bottom: 10px; }
-    .hero p { color: #d1d5db; margin-bottom: 20px; }
+    /* Hero */
+    .hero {
+      text-align:center;
+      margin:40px;
+      padding:50px;
+      animation: fadeIn 1s ease;
+    }
+
+    .hero h1 {
+      font-size:42px;
+      margin-bottom:10px;
+      background: linear-gradient(to right, #c084fc, #7c3aed);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+
+    .hero p {
+      color:#d1d5db;
+      margin-bottom:20px;
+    }
 
     .btn {
-      padding: 10px 20px;
-      border-radius: 10px;
-      border: none;
-      cursor: pointer;
-      margin-right: 10px;
-      transition: 0.3s;
+      padding:12px 24px;
+      border-radius:12px;
+      cursor:pointer;
+      border:none;
+      margin:10px;
+      transition:0.3s;
     }
 
     .btn-primary {
-      background: #7c3aed;
-      color: white;
+      background:#7c3aed;
+      color:white;
     }
 
-    .btn-primary:hover { background: #6d28d9; }
+    .btn-primary:hover {
+      transform:translateY(-3px);
+      box-shadow:0 10px 25px rgba(124,58,237,0.5);
+    }
 
     .btn-outline {
-      border: 1px solid rgba(255,255,255,0.3);
-      background: transparent;
-      color: white;
+      background:transparent;
+      border:1px solid rgba(255,255,255,0.3);
     }
 
-    .btn-outline:hover { background: rgba(255,255,255,0.1); }
+    .btn-outline:hover {
+      background:rgba(255,255,255,0.1);
+    }
 
-    section { margin-top: 50px; }
-
+    /* Grid */
     .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap:20px;
     }
 
     .card {
-      transition: 0.3s;
+      padding:25px;
+      transition:0.4s;
+      cursor:pointer;
     }
 
     .card:hover {
-      transform: scale(1.05);
+      transform:translateY(-10px) scale(1.03);
+      box-shadow:0 20px 40px rgba(124,58,237,0.4);
+    }
+
+    /* DevOps badges */
+    .badges span {
+      display:inline-block;
+      padding:8px 14px;
+      margin:5px;
+      border-radius:20px;
+      background:rgba(124,58,237,0.2);
+      border:1px solid rgba(124,58,237,0.5);
+      transition:0.3s;
+    }
+
+    .badges span:hover {
+      background:#7c3aed;
+      transform:scale(1.1);
+    }
+
+    /* Stats */
+    .stats {
+      display:flex;
+      justify-content:center;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    .stat {
+      padding:25px;
+      width:200px;
+      text-align:center;
+    }
+
+    .stat h3 {
+      color:#c084fc;
+      font-size:28px;
     }
 
     footer {
-      margin-top: 50px;
-      text-align: center;
-      color: #9ca3af;
+      text-align:center;
+      padding:30px;
+      color:#9ca3af;
     }
+
+    @keyframes fadeIn {
+      from { opacity:0; transform:translateY(30px); }
+      to { opacity:1; transform:translateY(0); }
+    }
+
   </style>
 </head>
+
 <body>
 
-  <nav>
-    <h2>Manish Kumar</h2>
-    <div>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </nav>
-
-  <div class="glass hero">
-    <h1>DevOps Engineer | AWS Certified</h1>
-    <p>Fresher DevOps Engineer with AWS Solutions Architect certification. Skilled in Docker, CI/CD, and cloud infrastructure.</p>
-    <button class="btn btn-primary">Download Resume</button>
-    <button class="btn btn-outline">Contact Me</button>
+<nav>
+  <h2>Manish Kumar</h2>
+  <div>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
   </div>
+</nav>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <div class="grid">
-      <div class="glass">
-        <p>I am passionate about building scalable systems using AWS, Docker, and automation tools. I enjoy solving real-world infrastructure problems.</p>
-      </div>
-      <div class="glass">
-        <ul>
-          <li>🚀 AWS (EC2, S3, IAM)</li>
-          <li>🐳 Docker</li>
-          <li>⚙️ CI/CD</li>
-          <li>☁️ Cloud Infrastructure</li>
-        </ul>
-      </div>
+<!-- HERO -->
+<div class="glass hero">
+  <h1>🚀 DevOps Engineer | AWS Certified</h1>
+  <p>1+ Year Experience | AWS Cloud Solutions Architect | Building scalable cloud systems using DevOps practices.</p>
+
+  <button class="btn btn-primary">Download Resume</button>
+  <button class="btn btn-outline" onclick="scrollToContact()">Contact Me</button>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <h2>About Me</h2>
+  <div class="grid">
+    <div class="glass card">
+      <p>
+        DevOps Engineer with hands-on experience in deploying LMS platforms like RCmoocs on AWS EC2.
+        Skilled in CI/CD, Docker, cloud automation and monitoring.
+      </p>
     </div>
-  </section>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="grid">
-      <div class="glass card">
-        <h3>AWS CI/CD Pipeline</h3>
-        <p>Automated deployment using AWS CodePipeline and CodeBuild.</p>
-      </div>
-      <div class="glass card">
-        <h3>Dockerized App</h3>
-        <p>Containerized MERN stack application using Docker.</p>
-      </div>
-      <div class="glass card">
-        <h3>Kubernetes Deployment</h3>
-        <p>Deployed scalable app using Kubernetes and Helm.</p>
-      </div>
+    <div class="glass card badges">
+      <span>AWS EC2</span>
+      <span>S3</span>
+      <span>IAM</span>
+      <span>RDS</span>
+      <span>DynamoDB</span>
+      <span>Lambda</span>
+      <span>CloudFront</span>
+      <span>Route53</span>
+      <span>CloudWatch</span>
+      <span>CloudTrail</span>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: manish.kumar.v@ramanujan.du.ac.in/p>
-  </section>
+<!-- DEVOPS STATS -->
+<section>
+  <h2>📊 DevOps Impact</h2>
+  <div class="stats">
+    <div class="glass stat">
+      <h3>5+</h3>
+      <p>Deployments</p>
+    </div>
+    <div class="glass stat">
+      <h3>10+</h3>
+      <p>Containers</p>
+    </div>
+    <div class="glass stat">
+      <h3>CI/CD</h3>
+      <p>Pipelines</p>
+    </div>
+  </div>
+</section>
 
-  <footer>
-    © 2026 Manish Kumar Vishwakarma
-  </footer>
+<!-- PROJECTS -->
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="grid">
 
-  <script>
-    // Simple scroll animation
-    const cards = document.querySelectorAll('.card');
+    <div class="glass card">
+      <h3>RCmoocs LMS Deployment</h3>
+      <p>Deployed LMS on AWS EC2 with Nginx, Docker & CI/CD pipeline.</p>
+      <a href="https://github.com/manishvishwakarma89/" target="_blank">View Code →</a>
+    </div>
 
-    window.addEventListener('scroll', () => {
-      cards.forEach(card => {
-        const rect = card.getBoundingClientRect();
-        if(rect.top < window.innerHeight - 50) {
-          card.style.opacity = 1;
-          card.style.transform = 'translateY(0)';
-        }
-      });
-    });
+    <div class="glass card">
+      <h3>AWS CI/CD Pipeline</h3>
+      <p>Automated deployments using CodePipeline, CodeBuild & GitHub.</p>
+    </div>
 
+    <div class="glass card">
+      <h3>Dockerized Applications</h3>
+      <p>Built and deployed containerized applications on cloud.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2>Contact</h2>
+  <p>Email: manish.kumar.v@ramanujan.du.ac.in</p>
+  <p>LinkedIn: <a href="https://linkedin.com/in/manish-kumar-21232155" target="_blank">Profile</a></p>
+</section>
+
+<footer>
+  © 2026 Manish Kumar Vishwakarma | DevOps Portfolio
+</footer>
+
+<script>
+  function scrollToContact() {
+    document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+  }
+
+  // Scroll reveal
+  const cards = document.querySelectorAll('.card');
+
+  window.addEventListener('scroll', () => {
     cards.forEach(card => {
-      card.style.opacity = 0;
-      card.style.transform = 'translateY(50px)';
-      card.style.transition = 'all 0.6s ease';
+      const rect = card.getBoundingClientRect();
+      if(rect.top < window.innerHeight - 50) {
+        card.style.opacity = 1;
+        card.style.transform = 'translateY(0)';
+      }
     });
-  </script>
+  });
 
+  cards.forEach(card => {
+    card.style.opacity = 0;
+    card.style.transform = 'translateY(50px)';
+    card.style.transition = 'all 0.6s ease';
+  });
+</script>
 </body>
 </html>
