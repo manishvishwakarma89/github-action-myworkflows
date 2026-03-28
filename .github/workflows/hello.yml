@@ -1,1 +1,11 @@
+# This workflow name using runner
+name: Hello
 
+on: 
+  push:
+    branches: [main]
+
+    # these are jobs inside the workflow_call
+    greet:
+      runs-on: ubuntu-latest
+      
