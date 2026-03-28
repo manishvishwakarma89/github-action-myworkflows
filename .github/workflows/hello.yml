@@ -1,11 +1,13 @@
-# This workflow name using runner
 name: Hello
-
-on: 
+on:
   push:
     branches: [main]
-
-    # these are jobs inside the workflow_call
+  jobs:
     greet:
       runs-on: ubuntu-latest
-      
+      steps:
+        - name: say hello to users
+          run: echo "Hello world"
+        - name: say hello to username
+          run: echo "Hello $USER"
+          
