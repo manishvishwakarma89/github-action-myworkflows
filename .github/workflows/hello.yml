@@ -1,13 +1,16 @@
 name: Hello
 on:
-  push:
-    branches: [main]
-  jobs:
-    greet:
-      runs-on: ubuntu-latest
-      steps:
-        - name: say hello to users
-          run: echo "Hello world"
-        - name: say hello to username
-          run: echo "Hello $USER"
-          
+  workflow_dispatch:
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+    steps:
+      - name: say hello to users
+        run: echo "Hello friends"
+      - name: say hello to username
+        run: echo "Hello $USER"
+  details:
+    runs-on: ubuntu-latest
+    steps:
+      - name: show what is verion of python, docker
+        run: docker --version && python --version
